@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT(
     KC_ESC      , HU_PIPE   , HU_SLSH   , HU_QUOT   , HU_DQUO   ,       HU_HASH     , HU_UACU   , HU_IACU   , HU_OACU   , HU_ODAC,
     HU_LABK     , HU_EQL    , HU_LBRC   , HU_LPRN   , HU_LCBR   ,       HU_PERC     , HU_AACU   , HU_EACU   , HU_ODIA   , HU_UDIA,
-    HU_RABK     , HU_AMPR   , HU_RBRC   , HU_LPRN   , HU_RCBR   ,       HU_DLR      , HU_AT     , HU_EURO   , HU_TILD   , HU_UDAC,
+    HU_RABK     , HU_AMPR   , HU_RBRC   , HU_RPRN   , HU_RCBR   ,       HU_DLR      , HU_AT     , HU_EURO   , HU_TILD   , HU_UDAC,
                                           _______   , _______   ,       _______     , _______
   ),
 
