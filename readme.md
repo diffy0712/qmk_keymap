@@ -9,6 +9,10 @@ First link ferris and sofle keymaps (only one time)
 
 
 ## Ferris
+My ferris uses a [Frood microcontroller](https://github.com/piit79/Frood) from [42keebs.eu](https://42keebs.eu)
+
+![My Ferris](./docs/ferris.jpg)
+
 Build the Ferris with
  - just ferris
 

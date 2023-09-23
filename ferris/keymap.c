@@ -6,10 +6,6 @@
 // https://github.com/qmk/qmk_firmware/blob/master/quantum/keymap_extras/keymap_hungarian.h
 #include "keymap_extras/keymap_hungarian.h"
 
-
-// missing: backtick
-
-
 enum custom_keycodes {
     KC_PRVWD = SAFE_RANGE,
     KC_NXTWD,
