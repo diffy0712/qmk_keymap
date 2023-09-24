@@ -20,6 +20,6 @@ Build the Ferris with
 [KeyboardLayoutEditor Link](http://www.keyboard-layout-editor.com/#/gists/6f6bec0f5fc9030cd80c0a83039da842)
 
 
-## Sweep 
+## Sofle 
 Build the Sofle with
  - just sofle
