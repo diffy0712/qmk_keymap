@@ -18,8 +18,7 @@ enum custom_keycodes {
     KC_NXTWD,
     KC_LSTRT,
     KC_LEND,
-    KC_DLINE,
-    KC_REDO
+    KC_DLINE
 };
 
 #define KM_LOW_TAB  LT(_LOWER, KC_TAB)
@@ -36,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT(
     KC_ESC      , HU_SLSH       , HU_GRV         , HU_QUOT        , HU_DQUO   ,       HU_PIPE     , HU_UACU         , HU_IACU        , HU_OACU        , HU_ODAC,
-    HU_LABK     , LALT_T(HU_EQL), LSFT_T(HU_LBRC), LCTL_T(HU_LPRN), HU_LCBR   ,       HU_HASH     , RCTL_T(HU_AACU) , RSFT_T(HU_EACU), LALT_T(HU_ODIA), HU_UDIA,
+    HU_LABK     , HU_EQL        , HU_LBRC        , HU_LPRN        , HU_LCBR   ,       HU_HASH     , RCTL_T(HU_AACU) , RSFT_T(HU_EACU), LALT_T(HU_ODIA), HU_UDIA,
     HU_RABK     , HU_AMPR       , HU_RBRC        , HU_RPRN        , HU_RCBR   ,       HU_DLR      , HU_AT           , HU_EURO        , HU_TILD        , HU_UDAC,
                                                    _______        , _______   ,       _______     , _______
   ),
@@ -44,14 +43,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_RAISE] = LAYOUT(
     KC_ESC      , HU_7          , HU_8           , HU_9           , HU_ASTR   ,       KC_PGUP     , KC_PRVWD  , KC_UP     , KC_NXTWD  , KC_DLINE,
     XXXXXXX     , LALT_T(HU_4)  , LSFT_T(HU_5)   , LCTL_T(HU_6)   , HU_PLUS   ,       KC_PGDN     , KC_LEFT   , KC_DOWN   , KC_RGHT   , KC_DEL,
-    HU_0        , HU_1          , HU_2           , HU_3           , HU_PERC   ,       KC_PSCR     , KC_LSTRT  , KC_UNDO   , KC_LEND   , KC_BSPC,
+    HU_0        , HU_1          , HU_2           , HU_3           , HU_PERC   ,       KC_PSCR     , KC_LSTRT  , XXXXXXX   , KC_LEND   , KC_BSPC,
                                                    _______        , _______   ,       _______     , _______
   ),
 
   [_ADJUST] = LAYOUT(
     KC_ESC      , KC_F7     , KC_F8     , KC_F9     , XXXXXXX   ,       XXXXXXX     , KC_MPRV   , KC_MPLY   , KC_MNXT   , XXXXXXX,
     XXXXXXX     , KC_F4     , KC_F5     , KC_F6     , XXXXXXX   ,       XXXXXXX     , KC_VOLD   , KC_MUTE   , KC_VOLU   , XXXXXXX,
-    XXXXXXX     , KC_F1     , KC_F2     , KC_F3     , XXXXXXX   ,       XXXXXXX     , XXXXXXX   , KC_REDO   , XXXXXXX   , XXXXXXX,
+    XXXXXXX     , KC_F1     , KC_F2     , KC_F3     , XXXXXXX   ,       XXXXXXX     , XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX,
                                           _______   , _______   ,       _______     , _______
   ),
 };
@@ -174,26 +173,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 unregister_mods(mod_config(MOD_LCTL));
                 unregister_code(KC_BSPC);
-            }
-            return false;
-        case KC_UNDO:
-            if (record->event.pressed) {
-                register_mods(mod_config(MOD_LCTL));
-                register_code(KC_Z);
-            } else {
-                unregister_mods(mod_config(MOD_LCTL));
-                unregister_code(KC_Z);
-            }
-            return false;
-        case KC_REDO:
-            if (record->event.pressed) {
-                register_mods(mod_config(MOD_LCTL));
-                register_mods(mod_config(MOD_LSFT));
-                register_code(KC_Z);
-            } else {
-                unregister_mods(mod_config(MOD_LCTL));
-                unregister_mods(mod_config(MOD_LSFT));
-                unregister_code(KC_Z);
             }
             return false;
         default:
